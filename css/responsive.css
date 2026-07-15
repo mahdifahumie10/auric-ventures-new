@@ -1,0 +1,378 @@
+/*NAVBAR*/
+@media (max-width: 900px) {
+  .navbar {
+    width: 90%;
+    padding: 0 20px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .logo {
+    transform: translateY(6px);
+  }
+
+  /* dropdown panel, hidden until toggled open */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(var(--nav-height) + 10px);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: rgba(224, 224, 224, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 24px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* standalone desktop quote button hides on mobile */
+  .btn-desktop-only {
+    display: none;
+  }
+
+  /* dropdown version shows instead, as the last item */
+  .nav-links-btn {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .nav-links-btn .btn {
+    padding: 10px 24px;
+  }
+
+  /* hamburger icon */
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-dark);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+
+/*ABOUT US*/
+@media (max-width: 900px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .intro-pillars {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .pillar {
+    padding: 0 !important;
+    border-right: none !important;
+  }
+
+  .pillar:not(:last-child) {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(59, 59, 59, 0.15); /* divider flips to horizontal on mobile */
+  }
+
+  .edge-label-left {
+    display: none;
+  }
+}
+
+
+/*SERVICES*/
+@media (max-width: 768px) {
+  .service-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2); /* 2 visible on tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    flex: 0 0 85%; /* 1 visible on phone */
+  }
+
+  .services-tabs {
+    gap: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .services-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+  }
+}
+
+
+/*PROJECT CARDS*/
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 4rem 6%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* single column on tablet/mobile */
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    height: 300px; /* shorter cards once stacked single-column */
+  }
+
+  .edge-label-left {
+    display: none; /* consistent with your other sections' mobile behavior */
+  }
+
+  .project-modal-content {
+    width: 94%;
+    max-height: 90vh;
+  }
+
+  .modal-img {
+    height: 220px;
+  }
+
+  .modal-body {
+    padding: 1.75rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    height: 260px;
+  }
+
+  .project-card-overlay {
+    padding: 1.5rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-img {
+    height: 180px;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-description {
+    font-size: 0.88rem;
+  }
+}
+
+/*WHY US - RESPONSIVE*/
+@media (max-width: 900px) {
+  .why-us-track {
+    flex-wrap: wrap;
+    row-gap: 3rem;
+  }
+
+  .why-us-track::before {
+    display: none; /* horizontal line doesn't translate to a wrapped grid */
+  }
+
+  .why-us-item {
+    flex: 0 0 calc(33.333% - 1rem); /* 3 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .why-us {
+    padding: 5rem 6%;
+  }
+
+  .why-us-item {
+    flex: 0 0 calc(50% - 0.75rem); /* 2 per row on phones */
+  }
+
+  .why-us-title {
+    margin-bottom: 3rem;
+  }
+}
+
+
+/*OUR PROCESS - RESPONSIVE*/
+@media (max-width: 768px) {
+  .process {
+    padding: 5rem 6%;
+  }
+
+  .process-intro {
+    margin-bottom: 3.5rem;
+  }
+
+  .edge-label-left {
+    display: none;
+  }
+
+  .process-step {
+    flex: 0 0 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-timeline {
+    gap: 1.5rem;
+  }
+
+  .process-step {
+    flex: 0 0 170px;
+  }
+
+  .process-timeline-wrap::before {
+    top: 21px;
+  }
+
+  .process-number {
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .process-step h4 {
+    font-size: 0.88rem;
+  }
+
+  .process-step p {
+    font-size: 0.75rem;
+  }
+}
+
+/*FOOTER RESPONSIVE*/
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+  }
+
+  .footer-grid > div:not(:last-child) {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1; /* full width across both columns */
+  }
+
+  .footer-logo {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 3.5rem 6% 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-logo img {
+    height: 56px;
+  }
+}
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+
+  .edge-label-left {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    padding: 5rem 6%;
+  }
+
+  .team-card-img img {
+    height: 220px;
+  }
+
+  .team-intro {
+    margin-bottom: 3rem;
+  }
+}
+
+
+/*CONTACT US AND TESTIMONIALS*/
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .edge-label-left {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 5rem 6%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .testimonial-slider {
+    min-height: 280px;
+  }
+}

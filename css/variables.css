@@ -1,0 +1,101 @@
+
+:root {
+  --color-dark: black;   /*0d1b2a*/       /* rich charcoal (not pure black) */
+  --color-light: #f5f3ef;        /* warm off-white */
+  --color-accent: #c89b3c;  /*#7ba7bc;*/    /* construction gold */
+  --color-teal: #3a6b6f;        /* muted steel teal */
+  --color-white: #ffffff;
+  --color-silver: #3b3b3b;      /* neutral grey */
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-overline: 'Montserrat', sans-serif;
+
+  --nav-height: 70px;
+  --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+/*BUTTON STYLING*/
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 20px;
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: var(--color-dark);
+  text-decoration: none;
+  font-family: var(--font-overline);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+ 
+
+  /* text-transform: uppercase; */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #926d1d;
+  border-color:#926d1d;
+}
+
+
+
+
+/*LABELS FORMAT - use either*/
+.edge-label-left {
+  position: absolute;
+  top: 30%; 
+  left: -3.5rem;
+  transform: rotate(-90deg) translateY(-100%);
+  transform-origin: top left;
+  font-family: var(--font-overline);
+  font-size: 1.5rem; /* was 0.7rem — slightly bigger */
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.4;
+  white-space: nowrap;
+}
+
+.edge-label-right {
+  position: absolute;
+  top: 30%;
+  right: -3.5rem;
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin: top right;
+  font-family: var(--font-overline);
+  font-size: 1.5rem; /* was 0.7rem — slightly bigger */
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.4;
+  white-space: nowrap;
+}
+
+
+/*TEXT AND HEADER FORMAT*/
+.main-header {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: var(--color-dark);
+  margin-bottom: 3rem;
+  max-width: 30ch;
+}
+
+.main-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--color-silver);
+  max-width: 46ch;
+}
