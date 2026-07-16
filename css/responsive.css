@@ -360,11 +360,20 @@
   .edge-label-left {
     display: none;
   }
+
+  .testimonial-slide img {
+    width: 100%;
+    height: 260px;
+  }
 }
 
 @media (max-width: 480px) {
   .contact {
     padding: 5rem 6%;
+  }
+
+  .contact-title {
+    max-width: none;
   }
 
   .form-row {
@@ -374,5 +383,44 @@
 
   .testimonial-slider {
     min-height: 280px;
+  }
+
+  .testimonial-slide img {
+    height: 220px;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 2.75rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+    max-width: none;
+  }
+}
+
+/*EDGE TEXT FIXES*/
+@media (max-width: 900px) {
+  .edge-label-left,
+  .edge-label-right {
+    position: static;   /* remove absolute positioning entirely */
+    display: block;
+    transform: none;    /* cancel the rotation */
+    text-align: left;
+    margin-bottom: 1.5rem;
+    writing-mode: horizontal-tb; /* ensure it reads normally, not sideways */
+  }
+}
+
+@media (max-width: 900px) {
+  .services,
+  .intro,
+  .why-us,
+  .process,
+  .contact,
+  .team,
+  .projects-section {
+    padding-left: 7%;
+    padding-right: 7%;
   }
 }
