@@ -152,7 +152,7 @@ function startAutoScroll() {
   autoScrollTimer = setInterval(() => {
     const next = (currentSlide + 1) % galleryImages.length; // loops back to 0 after the last image
     goToSlide(next);
-  }, 3000); // 3 seconds per slide
+  }, 4000); // 4 seconds per slide
 }
 
 function restartAutoScroll() {
@@ -236,3 +236,52 @@ nextBtn.addEventListener('click', () => {
 });
 
 startAutoScrollTestimonials(); // kick off auto-scroll on page load
+
+
+//EMAILJS AND BUTTON POPUP
+// Initialize EmailJS with your Public Key
+emailjs.init('p-73WghA1x_BEhal6');
+
+const contactForm = document.getElementById('contactForm');
+const confirmPopup = document.getElementById('confirmPopup');
+const confirmPopupClose = document.getElementById('confirmPopupClose');
+const submitBtn = contactForm.querySelector('.btn-form');
+
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault(); // stops the default page-reload behavior
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  const formData = {
+    name: contactForm.name.value,
+    phone: contactForm.phone.value,
+    email: contactForm.email.value,
+    location: contactForm.location.value,
+    message: contactForm.message.value
+  };
+
+  // Send email #1 — notifies the business
+  emailjs.send('service_fnc01t2', 'template_kidzw8f', formData)
+    .then(() => {
+      // Send email #2 — auto-reply to the customer
+      return emailjs.send('service_fnc01t2', 'template_z594amw', formData);
+    })
+    .then(() => {
+      // Both emails sent successfully — show the popup
+      contactForm.reset();
+      confirmPopup.classList.add('open');
+    })
+    .catch((error) => {
+      console.error('Email send failed:', error);
+      alert('Something went wrong sending your message. Please try again or contact us directly.');
+    });
+});
+
+
+
+confirmPopupClose.addEventListener('click', () => {
+  confirmPopup.classList.remove('open');
+  submitBtn.disabled = false;
+  submitBtn.textContent = "Send Message"
+});
