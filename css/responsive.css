@@ -424,3 +424,173 @@
     padding-right: 7%;
   }
 }
+
+/*BUTTONS FOR THE SERVICES*/
+@media (max-width: 900px) {
+  .scroll-controls{
+    display: none;
+  }
+}
+
+/*PROJECT MODAL*/
+@media (max-width: 768px) {
+  .project-modal-content {
+    width: 94%;
+    max-height: 90vh;
+    border-radius: 10px;
+  }
+
+  .modal-gallery-track img {
+    height: 260px;
+  }
+
+  .modal-body {
+    padding: 2rem;
+  }
+
+  .modal-tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-meta {
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-meta span {
+    font-size: 0.7rem;
+  }
+
+  .modal-description {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .project-modal-close {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-modal-content {
+    width: 92%;
+  }
+
+  .modal-gallery-track img {
+    height: 200px;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .modal-description {
+    font-size: 0.85rem;
+  }
+
+  .modal-gallery-dots {
+    padding: 0.75rem 0 0;
+  }
+
+  .modal-gallery-dots span {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/*FOOTER*/
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+  }
+
+  .footer-grid > div:not(:last-child) {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1; /* full width across both columns */
+  }
+
+  .footer-logo {
+    justify-content: flex-start;
+    grid-column: 1 / -1; /* full width too, so it doesn't get squeezed into a half-column */
+  }
+
+  .footer-logo img {
+    height: 160px; /* was 300px — way too large once it's not sharing a narrow column */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 3.5rem 6% 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand,
+  .footer-logo {
+    grid-column: 1; /* reset since everything is one column now anyway */
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-logo img {
+    height: 120px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+}
+
+
+/*SERVICE TABS FIX*/
+@media (max-width: 480px) {
+  .services-tabs {
+    flex-wrap: nowrap;         /* stops tabs from wrapping to a new line */
+    overflow-x: auto;         /* enables horizontal scroll instead */
+    overflow-y: hidden;       /* prevents any vertical scroll/jitter */
+    -webkit-overflow-scrolling: touch; /* smoother momentum scrolling on iOS */
+    scrollbar-width: none;
+    white-space: nowrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem; /* small buffer so the underline isn't clipped by overflow */
+  }
+
+  .services-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex-shrink: 0; /* prevents tabs from being squeezed/resized to fit */
+    white-space: nowrap;
+  }
+}
