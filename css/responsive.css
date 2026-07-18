@@ -574,15 +574,15 @@
 /*SERVICE TABS FIX*/
 @media (max-width: 480px) {
   .services-tabs {
-    flex-wrap: nowrap;         /* stops tabs from wrapping to a new line */
-    overflow-x: auto;         /* enables horizontal scroll instead */
-    overflow-y: hidden;       /* prevents any vertical scroll/jitter */
-    -webkit-overflow-scrolling: touch; /* smoother momentum scrolling on iOS */
+    flex-wrap: nowrap;         
+    overflow-x: auto;         
+    overflow-y: hidden;     
+    -webkit-overflow-scrolling: touch; 
     scrollbar-width: none;
     white-space: nowrap;
     gap: 1.5rem;
     margin-bottom: 2rem;
-    padding-bottom: 0.5rem; /* small buffer so the underline isn't clipped by overflow */
+    padding-bottom: 0.5rem; 
   }
 
   .services-tabs::-webkit-scrollbar {
@@ -592,5 +592,18 @@
   .tab-btn {
     flex-shrink: 0; /* prevents tabs from being squeezed/resized to fit */
     white-space: nowrap;
+  }
+
+  .service-card h4{
+    font-size: 1rem;
+  }
+
+  .tab-btn {
+    font-size: 0.7rem;
+  }
+
+  .btn-service{
+    padding: 10px 24px;
+    font-size: 10px;
   }
 }
